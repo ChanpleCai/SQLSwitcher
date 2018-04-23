@@ -29,13 +29,34 @@ namespace SQLSwitcher
                 {
                     sc.WaitForStatus(ServiceControllerStatus.Running);
                     notifyIcon.Icon = Resources.server_run;
+                    notifyIcon.BalloonTipText = "Sql Server is running!";
+                    notifyIcon.ShowBalloonTip(5000);
                 }
                 else
                 {
                     sc.WaitForStatus(ServiceControllerStatus.Stopped);
                     notifyIcon.Icon = Resources.server_stop;
+                    notifyIcon.BalloonTipText = "SQL Server has stopped!";
+                    notifyIcon.ShowBalloonTip(5000);
                 }
             };
+
+            var exit = new ToolStripMenuItem
+            {
+                Font = new System.Drawing.Font("Segoe UI", 9F),
+                Text = "Exit"
+            };
+
+            exit.Click += (s, e) =>
+            {
+                notifyIcon.Dispose();
+                sc.Dispose();
+                Application.Exit();
+            };
+
+            var contextMenuStrip = new ContextMenuStrip();
+            contextMenuStrip.Items.Add(exit);
+            notifyIcon.ContextMenuStrip = contextMenuStrip;
         }
     }
 }
