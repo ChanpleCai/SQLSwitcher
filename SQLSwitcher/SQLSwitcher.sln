@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2037
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLSwitcher", "SQLSwitcher\SQLSwitcher.csproj", "{F4389B99-C14A-4FCC-A912-C0D249E05A11}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AAFBF905-9306-4F59-9A9D-E180BBE7B939} = {AAFBF905-9306-4F59-9A9D-E180BBE7B939}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Switcher", "Switcher\Switcher.csproj", "{AAFBF905-9306-4F59-9A9D-E180BBE7B939}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4389B99-C14A-4FCC-A912-C0D249E05A11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4389B99-C14A-4FCC-A912-C0D249E05A11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4389B99-C14A-4FCC-A912-C0D249E05A11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4389B99-C14A-4FCC-A912-C0D249E05A11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAFBF905-9306-4F59-9A9D-E180BBE7B939}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAFBF905-9306-4F59-9A9D-E180BBE7B939}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAFBF905-9306-4F59-9A9D-E180BBE7B939}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAFBF905-9306-4F59-9A9D-E180BBE7B939}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {953FB0DA-214F-4E63-8E70-0D2698081F2B}
+	EndGlobalSection
+EndGlobal
