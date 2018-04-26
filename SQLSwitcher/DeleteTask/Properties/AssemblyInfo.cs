@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("SQLSwitcher")]
+[assembly: AssemblyTitle("DeleteTask")]
 [assembly: AssemblyDescription("Chanple")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Chanple")]
-[assembly: AssemblyProduct("SQLSwitcher")]
+[assembly: AssemblyProduct("DeleteTask")]
 [assembly: AssemblyCopyright("Copyright ©  2018 Chanple Cai")]
 [assembly: AssemblyTrademark("Chanple")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("f4389b99-c14a-4fcc-a912-c0d249e05a11")]
+[assembly: Guid("5038c5e3-3b85-4297-ab11-2056d6bf3300")]
 
 // 程序集的版本信息由下列四个值组成: 
 //
