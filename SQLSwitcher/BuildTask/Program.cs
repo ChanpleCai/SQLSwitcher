@@ -14,6 +14,7 @@ namespace BuildTask
                 TaskDefinition td = ts.NewTask();
                 td.Actions.Add(new ExecAction(Path.Combine(Environment.CurrentDirectory, "Switcher")));
                 //https://github.com/dahall/TaskScheduler/wiki/TaskSecurity
+                td.Settings.DisallowStartIfOnBatteries = false;
                 td.Principal.RunLevel = TaskRunLevel.Highest;
                 ts.RootFolder.RegisterTaskDefinition("SQLSwitcher", td);
             }
