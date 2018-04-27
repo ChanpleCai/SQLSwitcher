@@ -17,6 +17,7 @@ namespace SQLSwitcher
             notifyIcon = new NotifyIcon
             {
                 Icon = sc.Status.Equals(ServiceControllerStatus.Stopped) ? Resources.server_stop : Resources.server_run,
+                Text = Application.ProductName,
                 Visible = true
             };
 
@@ -49,13 +50,13 @@ namespace SQLSwitcher
             {
                 sc.WaitForStatus(ServiceControllerStatus.Running);
                 notifyIcon.Icon = Resources.server_run;
-                notifyIcon.BalloonTipText = "SQL Server is running!";
+                notifyIcon.Text = notifyIcon.BalloonTipText = "SQL Server is running!";
             }
             else
             {
                 sc.WaitForStatus(ServiceControllerStatus.Stopped);
                 notifyIcon.Icon = Resources.server_stop;
-                notifyIcon.BalloonTipText = "SQL Server has stopped!";
+                notifyIcon.Text = notifyIcon.BalloonTipText = "SQL Server has stopped!";
             }
 
             notifyIcon.ShowBalloonTip(3000);
