@@ -5,10 +5,11 @@ using System.Diagnostics;
 
 namespace SQLSwitcher
 {
-    public class IconTray
+    public class IconTray : ApplicationContext
     {
         private NotifyIcon notifyIcon;
         private ServiceController sc;
+        private readonly bool IsChinese = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.StartsWith("zh");
 
 
         public IconTray()
@@ -26,7 +27,7 @@ namespace SQLSwitcher
             var exit = new ToolStripMenuItem
             {
                 Font = new System.Drawing.Font("Segoe UI", 9F),
-                Text = "Exit"
+                Text = IsChinese ? "退出" : "Exit"
             };
 
             exit.Click += (s, e) =>
@@ -50,13 +51,13 @@ namespace SQLSwitcher
             {
                 sc.WaitForStatus(ServiceControllerStatus.Running);
                 notifyIcon.Icon = Resources.server_run;
-                notifyIcon.Text = notifyIcon.BalloonTipText = "SQL Server is running!";
+                notifyIcon.Text = notifyIcon.BalloonTipText = IsChinese ? "SQL 服务正在运行" : "SQL Server is running!";
             }
             else
             {
                 sc.WaitForStatus(ServiceControllerStatus.Stopped);
                 notifyIcon.Icon = Resources.server_stop;
-                notifyIcon.Text = notifyIcon.BalloonTipText = "SQL Server has stopped!";
+                notifyIcon.Text = notifyIcon.BalloonTipText = IsChinese ? "SQL 服务已停止" : "SQL Server has stopped!";
             }
 
             notifyIcon.ShowBalloonTip(3000);
