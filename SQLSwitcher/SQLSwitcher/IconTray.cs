@@ -14,7 +14,7 @@ namespace SQLSwitcher
 
         public IconTray()
         {
-            sc = new ServiceController("MSSQLSERVER");
+            sc = new ServiceController("OracleServiceORCL");
             notifyIcon = new NotifyIcon
             {
                 Icon = sc.Status.Equals(ServiceControllerStatus.Stopped) ? Resources.server_stop : Resources.server_run,

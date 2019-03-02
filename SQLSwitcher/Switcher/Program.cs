@@ -6,7 +6,7 @@ namespace Switcher
     {
         static void Main()
         {
-            using (ServiceController sc = new ServiceController("MSSQLSERVER"))
+            using (ServiceController sc = new ServiceController("OracleServiceORCL"))
                 if (sc.Status.Equals(ServiceControllerStatus.Stopped))
                     sc.Start();
                 else
