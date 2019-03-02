@@ -38,7 +38,7 @@
   <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup>
-    <ApplicationIcon>Resources\server_run.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\server_wait.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
@@ -90,6 +90,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\server_stop.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\server_wait.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\server_wait_32.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

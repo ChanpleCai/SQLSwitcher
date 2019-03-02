@@ -47,7 +47,9 @@ namespace SQLSwitcher
         {
             _notifyIcon.MouseDoubleClick -= NotifyIcon_MouseDoubleClick;
             Process.Start("schtasks", "/run /TN \"SQLSwitcher\"");
-
+            _notifyIcon.Icon = Resources.server_wait_32;
+            _notifyIcon.Text = _notifyIcon.BalloonTipText = _isChinese ? "SQL 服务正在启动..." : "SQL Server is starting...";
+            _notifyIcon.ShowBalloonTip(1000);
             if (sc.Status.Equals(ServiceControllerStatus.Stopped))
             {
                 await Task.Run(() => sc.WaitForStatus(ServiceControllerStatus.Running));
