@@ -47,17 +47,20 @@ namespace SQLSwitcher
         {
             _notifyIcon.MouseDoubleClick -= NotifyIcon_MouseDoubleClick;
             Process.Start("schtasks", "/run /TN \"SQLSwitcher\"");
-            _notifyIcon.Icon = Resources.server_wait_32;
-            _notifyIcon.Text = _notifyIcon.BalloonTipText = _isChinese ? "SQL 服务正在启动..." : "SQL Server is starting...";
-            _notifyIcon.ShowBalloonTip(1000);
             if (sc.Status.Equals(ServiceControllerStatus.Stopped))
             {
+                _notifyIcon.Icon = Resources.server_wait_32;
+                _notifyIcon.Text = _notifyIcon.BalloonTipText = _isChinese ? "SQL 服务正在启动..." : "SQL Server is starting...";
+                _notifyIcon.ShowBalloonTip(5000);
                 await Task.Run(() => sc.WaitForStatus(ServiceControllerStatus.Running));
                 _notifyIcon.Icon = Resources.server_run;
                 _notifyIcon.Text = _notifyIcon.BalloonTipText = _isChinese ? "SQL 服务正在运行" : "SQL Server is running!";
             }
             else
             {
+                _notifyIcon.Icon = Resources.server_wait_32;
+                _notifyIcon.Text = _notifyIcon.BalloonTipText = _isChinese ? "SQL 服务正在关闭..." : "SQL Server is shutting down...";
+                _notifyIcon.ShowBalloonTip(5000);
                 await Task.Run(() => sc.WaitForStatus(ServiceControllerStatus.Stopped));
                 _notifyIcon.Icon = Resources.server_stop;
                 _notifyIcon.Text = _notifyIcon.BalloonTipText = _isChinese ? "SQL 服务已停止" : "SQL Server has stopped!";
