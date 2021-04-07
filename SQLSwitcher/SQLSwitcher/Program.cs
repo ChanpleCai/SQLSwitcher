@@ -4,12 +4,12 @@ using System.Windows.Forms;
 
 namespace SQLSwitcher
 {
-    static class Program
+    internal static class Program
     {
         [STAThread]
-        static void Main()
+        private static void Main()
         {
-            using (new Mutex(true, "{b3de16e0-0a95-4a4f-8869-e45eca845c2a}", out bool createNew))
+            using (new Mutex(true, "{b3de16e0-0a95-4a4f-8869-e45eca845c2a}", out var createNew))
             {
                 if (!createNew)
                     return;

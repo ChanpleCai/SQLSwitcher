@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // 有关程序集的一般信息由以下
@@ -10,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Chanple")]
 [assembly: AssemblyProduct("Switcher")]
-[assembly: AssemblyCopyright("Copyright ©  2018-2019 Chanple Cai")]
+[assembly: AssemblyCopyright("Copyright ©  2018-2021 Chanple Cai")]
 [assembly: AssemblyTrademark("Chanple")]
 [assembly: AssemblyCulture("")]
 
